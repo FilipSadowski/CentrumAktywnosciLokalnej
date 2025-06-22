@@ -109,7 +109,7 @@ export default function IntroScreen({ onFinish }: IntroScreenProps) {
           >
             <div className="px-0 py-2 pt-2 font-[Helvetica] text-white text-left max-w-fit">
               <p className="text-2xl md:text-xl font-semibold opacity-90">
-                Sala Widowiskowa Tamka
+                Centrum Aktywności Lokalnej
               </p>
               <p className="px-1 text-sm md:text-base font-normal opacity-70 mt-1">
                 Filip Sadowski • 2025
