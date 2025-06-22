@@ -77,7 +77,7 @@ export default function IntroScreen({ onFinish }: IntroScreenProps) {
           className="relative z-20 text-white font-[Helvetica] text-center px-4"
         >
           <h1 className="text-3xl md:text-5xl font-bold tracking-wide leading-relaxed">
-            Witaj na Tamce
+            Witaj w Wesołej Chmurce
           </h1>
         </motion.div>
       )}
