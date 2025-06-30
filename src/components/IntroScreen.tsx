@@ -74,10 +74,18 @@ export default function IntroScreen({ onFinish }: IntroScreenProps) {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           transition={{ duration: 1 }}
-          className="relative z-20 text-white font-[Helvetica] text-center px-4"
+          className="relative z-20 text-white font-[Helvetica] text-center px-4 flex flex-col items-center"
         >
+          <motion.img
+            src="/images/logo.svg"
+            alt="Logo"
+            className="w-100 h-auto mb-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0 }}
+          />
           <h1 className="text-3xl md:text-5xl font-bold tracking-wide leading-relaxed">
-            Witaj w Wesołej Chmurce
+            Centrum Aktywności Lokalnej
           </h1>
         </motion.div>
       )}
@@ -115,11 +123,6 @@ export default function IntroScreen({ onFinish }: IntroScreenProps) {
                 Filip Sadowski • 2025
               </p>
             </div>
-
-
-
-
-            
           </motion.div>
         </>
       )}
