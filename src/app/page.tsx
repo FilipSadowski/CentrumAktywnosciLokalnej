@@ -6,33 +6,26 @@ import MobileMenu from '@/components/MobileMenu'
 import PanoramaSection from '@/components/PanoramaSection'
 import GallerySection from '@/components/GallerySection'
 import IntroScreen from '@/components/IntroScreen'
+import ModelViewerSection from '@/components/ModelViewerSection'
 
 export default function Home() {
-  const [active, setActive] = useState<'panorama' | 'gallery'>('panorama')
+  const [active, setActive] = useState<'panorama' | 'gallery' | 'model'>('panorama') // 🆕 dodany 'model'
   const [fullscreen, setFullscreen] = useState(false)
   const [showIntro, setShowIntro] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
-    // Reset scroll and DOM on page load
-    window.scrollTo(0, 0);
-    
-    // Reset all transformations
-    document.body.style.transform = 'none';
-    document.documentElement.style.transform = 'none';
-    
-    // Reset overflow settings
-    document.body.style.overflow = 'auto';
-    document.documentElement.style.overflow = 'auto';
-    
-    // Reset any meta viewport settings
-    const viewport = document.querySelector('meta[name="viewport"]');
+    window.scrollTo(0, 0)
+    document.body.style.transform = 'none'
+    document.documentElement.style.transform = 'none'
+    document.body.style.overflow = 'auto'
+    document.documentElement.style.overflow = 'auto'
+    const viewport = document.querySelector('meta[name="viewport"]')
     if (viewport) {
-      viewport.setAttribute('content', 'width=device-width, initial-scale=1.0');
+      viewport.setAttribute('content', 'width=device-width, initial-scale=1.0')
     }
-    
-    document.body.classList.remove('overflow-hidden');
-  }, []);
+    document.body.classList.remove('overflow-hidden')
+  }, [])
 
   useEffect(() => {
     setShowIntro(true)
@@ -47,31 +40,24 @@ export default function Home() {
       window.history.scrollRestoration = 'manual'
     }
   }, [])
-  
+
   useEffect(() => {
     sessionStorage.clear()
   }, [])
 
   useEffect(() => {
-    // Zresetuj scroll i DOM przy każdym ładowaniu strony
     window.scrollTo(0, 0)
     document.body.classList.remove('overflow-hidden')
-  
-    // Możesz też przywrócić skalę widoku
     document.body.style.transform = ''
     document.body.style.overflow = 'auto'
   }, [])
-  
 
-
-  // 🔒 Lock page scroll when in gallery (not fullscreen)
   useEffect(() => {
     if (active === 'gallery' && !fullscreen) {
       document.body.classList.add('overflow-hidden')
     } else {
       document.body.classList.remove('overflow-hidden')
     }
-
     return () => {
       document.body.classList.remove('overflow-hidden')
     }
@@ -104,6 +90,7 @@ export default function Home() {
               <PanoramaSection />
             </motion.div>
           )}
+
           {!showIntro && active === 'gallery' && (
             <motion.div
               key="gallery"
@@ -114,6 +101,19 @@ export default function Home() {
               className="absolute inset-0"
             >
               <GallerySection setFullscreen={setFullscreen} />
+            </motion.div>
+          )}
+
+          {!showIntro && active === 'model' && ( // 🆕 sekcja model
+            <motion.div
+              key="model"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.5 }}
+              className="absolute inset-0"
+            >
+              <ModelViewerSection />
             </motion.div>
           )}
         </AnimatePresence>
