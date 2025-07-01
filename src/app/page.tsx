@@ -2,14 +2,14 @@
 
 import { useEffect, useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import MobileMenu from '@/components/MobileMenu'
+import MobileMenu, { Section } from '@/components/MobileMenu'
 import PanoramaSection from '@/components/PanoramaSection'
 import GallerySection from '@/components/GallerySection'
 import IntroScreen from '@/components/IntroScreen'
 import ModelViewerSection from '@/components/ModelViewerSection'
 
 export default function Home() {
-  const [active, setActive] = useState<'panorama' | 'gallery' | 'model'>('panorama') // 🆕 dodany 'model'
+  const [active, setActive] = useState<Section>('panorama')
   const [fullscreen, setFullscreen] = useState(false)
   const [showIntro, setShowIntro] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -104,7 +104,7 @@ export default function Home() {
             </motion.div>
           )}
 
-          {!showIntro && active === 'model' && ( // 🆕 sekcja model
+          {!showIntro && active === 'model' && (
             <motion.div
               key="model"
               initial={{ opacity: 0, y: 20 }}
