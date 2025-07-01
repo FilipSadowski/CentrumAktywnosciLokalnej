@@ -5,14 +5,17 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { Info } from 'lucide-react'
 
 const images = [
-  { src: '/images/1.jpg', title: 'Z Wyspy Słodowej nocą', description: 'Kolorowe oświetlenie podczas wydarzenia z zamkniętą seceną.' },
-  { src: '/images/2.jpg', title: 'Z Wyspy Słodowej nocą', description: 'Koncert!!! Poszerzenie widowni o wyspę słodową.' },
-  { src: '/images/3.jpg', title: 'Widok z Mostu Uniwersyteckiego', description: 'Ciepłe oświetlenie wpasowuje się w przyjemne otoczenie.' },
-  { src: '/images/4.jpg', title: 'Wnętrze Sali', description: 'Nowoczesne kszatłty pomagające kształtować akustykę i umozliwiające zmienianie pomieszczenia.' },
-  { src: '/images/5.jpg', title: 'Schemat Parteru', description: 'Główne i wejsciowe foyer, restauracja, sala uzupełnione o obsługę.' },
-  { src: '/images/6.jpg', title: 'Schemat Piętra', description: 'Antresola foyer, balkony i biura znajdują się na tej kondygnacji.' },
-  { src: '/images/7.jpg', title: 'Schemat Garażu', description: 'Niewielki garaż z widną samochodową.' },
-  { src: '/images/8.jpg', title: 'Szkic Zagospodarowania Terenu', description: 'Serce budynku w środku.' }
+  { src: '/images/1.jpg', title: 'Plansza 1 - Orientacja i analizy', description: 'Kolorowe oświetlenie podczas wydarzenia z zamkniętą seceną.' },
+  { src: '/images/2.jpg', title: 'Plansza 2 - Zagospodarowanie terenu', description: 'Koncert!!! Poszerzenie widowni o wyspę słodową.' },
+  { src: '/images/3.jpg', title: 'Plansza 3 - Strefy funkcjonalne', description: 'Ciepłe oświetlenie wpasowuje się w przyjemne otoczenie.' },
+  { src: '/images/4.jpg', title: 'Plansza 4 - Budynek A', description: 'Nowoczesne kszatłty pomagające kształtować akustykę i umozliwiające zmienianie pomieszczenia.' },
+  { src: '/images/5.jpg', title: 'Plansza 5 - Budynek B', description: 'Główne i wejsciowe foyer, restauracja, sala uzupełnione o obsługę.' },
+  { src: '/images/6.jpg', title: 'Plansza 6 - Budynek C', description: 'Antresola foyer, balkony i biura znajdują się na tej kondygnacji.' },
+  { src: '/images/7.jpg', title: 'Połączone plansze', description: 'Niewielki garaż z widną samochodową.' },
+  { src: '/images/8.jpg', title: 'Aksonometria', description: 'Serce budynku w środku.' },
+  { src: '/images/9.jpg', title: 'Wizualizacja najścia widokowego', description: 'Serce budynku w środku.' },
+  { src: '/images/10.jpg', title: 'Wizualizacja dziedzińca', description: 'Serce budynku w środku.' },
+  { src: '/images/11.jpg', title: 'Wizualizacja elewacji', description: 'Serce budynku w środku.' },
 ]
 
 export default function GallerySection({ setFullscreen }: { setFullscreen: (v: boolean) => void }) {
@@ -150,9 +153,13 @@ export default function GallerySection({ setFullscreen }: { setFullscreen: (v: b
   return (
     <div className="bg-black min-h-screen">
       <div className="px-4 pt-6 pb-6">
-        <h1 className="text-white text-2xl sm:text-4xl font-bold mb-2">Galeria Projektu</h1>
+        <div className="flex items-center mb-2">
+          <img src="/images/logo.svg" alt="Logo" className="h-8 w-auto mr-3" />
+          <h1 className="text-white text-2xl sm:text-4xl font-bold">Galeria Projektu</h1>
+        </div>
         <div className="h-0.5 w-screen100 bg-white rounded-full" />
       </div>
+
 
       <div className="px-4 pb-8 columns-2 space-y-4 overflow-y-auto max-h-[calc(100vh-8rem)] pr-2">
         {images.map((item, i) => {
