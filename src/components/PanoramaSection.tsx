@@ -70,12 +70,16 @@ export default function PanoramaSection() {
     <section className="fixed inset-0 w-full h-[100dvh] min-h-[100dvh] overflow-hidden z-0 bg-black">
       
       {/* Tytuł sekcji */}
-    <div className="absolute top-0 left-0 right-0 px-4 pt-6 pb-3 z-40 bg-black">
-      <h1 className="text-white text-2xl sm:text-4xl font-bold mb-2">
-        Panoramy 360° 
-      </h1>
-      <div className="h-0.5 w-full bg-white rounded-full" />
-    </div>
+      <div className="absolute top-0 left-0 right-0 px-4 pt-6 pb-3 z-40 bg-black">
+  <div className="flex items-center mb-2">
+    <img src="/images/logo.svg" alt="Logo" className="h-8 w-auto mr-3" />
+    <h1 className="text-white text-2xl sm:text-4xl font-bold">
+      Panoramy 360°
+    </h1>
+  </div>
+  <div className="h-0.5 w-full bg-white rounded-full" />
+</div>
+
       
       {/* Panorama Viewer */}
       <motion.div
