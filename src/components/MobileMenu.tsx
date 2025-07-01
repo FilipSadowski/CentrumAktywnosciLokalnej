@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X } from 'lucide-react'
 
-export type Section = 'panorama' | 'gallery' | 'model'
+type Section = 'panorama' | 'gallery' | 'model'
 
 type Props = {
   active: Section
