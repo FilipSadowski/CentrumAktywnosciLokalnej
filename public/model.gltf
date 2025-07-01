@@ -68,8 +68,8 @@
 	"images":[
 		{
 			"mimeType":"image/png",
-			"name":"combined 3",
-			"uri":"combined%203.png"
+			"name":"combined_3",
+			"uri":"combined_3.png"
 		}
 	],
 	"accessors":[
