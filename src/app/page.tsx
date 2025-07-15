@@ -9,7 +9,7 @@ import IntroScreen from '@/components/IntroScreen'
 import ModelViewerSection from '@/components/ModelViewerSection'
 
 export default function Home() {
-  const [active, setActive] = useState<'panorama' | 'gallery' | 'model'>('panorama') // 🆕 dodany 'model'
+  const [active, setActive] = useState<'panorama' | 'gallery' | 'model'>('model') // 🆕 dodany 'model'
   const [fullscreen, setFullscreen] = useState(false)
   const [showIntro, setShowIntro] = useState(true)
   const [menuOpen, setMenuOpen] = useState(false)
@@ -29,7 +29,7 @@ export default function Home() {
 
   useEffect(() => {
     setShowIntro(true)
-    setActive('panorama')
+    setActive('model')
     setFullscreen(false)
     setMenuOpen(false)
   }, [])
