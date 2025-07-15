@@ -76,18 +76,6 @@ export default function MobileMenu({
               <ul className="flex flex-col items-center justify-center font-semibold gap-4 py-8 text-white text-lg font-[Helvetica]">
                 <li>
                   <button
-                    onClick={() => handleChange('panorama')}
-                    className={`px-6 py-2 rounded transition-opacity duration-200 ${
-                      active === 'panorama'
-                        ? 'opacity-100 font-black underline underline-offset-6'
-                        : 'opacity-60 hover:opacity-100'
-                    }`}
-                  >
-                    Panoramy 360°
-                  </button>
-                </li>
-                <li>
-                  <button
                     onClick={() => handleChange('gallery')}
                     className={`px-6 py-2 rounded transition-opacity duration-200 ${
                       active === 'gallery'
